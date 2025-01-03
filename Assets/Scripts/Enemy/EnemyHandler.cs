@@ -1,25 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
+using System;
 
-public class PlayerHandler : MonoBehaviour, IHandler
+public class EnemyHandler : MonoBehaviour, IHandler
 {
     #region Events
     public static event Action onDamageReceived;
     #endregion
     #region Variables
-    [SerializeField] private PlayerStatsSO playerStatsSO;
+    [SerializeField] private EnemyStatsSO enemyStatsSO;
 
     private StatSystem _statSystem;
     private HealthSystem _healthSystem;
 
     #endregion
     #region Initialize
+
     public void Initialize()
     {
-        SetupPlayer();
+        SetupEnemy();
     }
 
     #endregion
@@ -57,25 +57,14 @@ public class PlayerHandler : MonoBehaviour, IHandler
     #endregion
 
     #region Player Setup
-    private void SetupPlayer()
+    private void SetupEnemy()
     {
-        _statSystem = new StatSystem(playerStatsSO);
+        _statSystem = new StatSystem(enemyStatsSO);
         _healthSystem = new HealthSystem(_statSystem.GetHealth());
         _healthSystem.IncreaseMaxHealth(GameManager.i.GetBonusStats().GetBonusHealth());
         
-        GetComponent<IInputHandler>().Initialize();
-        GetComponent<IAttackHandler>().Initialize();
-        GetComponent<IDamageable>().InitializeDamage(false);
-    }
-    #endregion
-
-    #region Loop
-    private void Update() {
-#if UNITY_EDITOR
-    if (Input.GetKeyDown(KeyCode.F))
-            TakeDamage(5);
-            
-#endif        
+    //  GetComponent<IAttackHandler>().Initialize();
+        GetComponent<IDamageable>().InitializeDamage(true);
     }
     #endregion
 }

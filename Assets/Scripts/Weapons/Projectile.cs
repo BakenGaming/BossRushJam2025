@@ -29,6 +29,13 @@ public class Projectile : MonoBehaviour
     {
         lifeTimer -=Time.deltaTime;
         if (lifeTimer <= 0) ObjectPooler.EnqueueObject(this, "Sprinkle");
-        
+    }
+
+    private void OnTriggerEnter2D(Collider2D _trigger) 
+    {
+        IDamageable damageable= _trigger.gameObject.GetComponent<IDamageable>();
+        if(damageable != null)
+        damageable.TakeDamage(_weaponStatsSO.projectileDamage);
+        ObjectPooler.EnqueueObject(this, "Sprinkle");
     }
 }

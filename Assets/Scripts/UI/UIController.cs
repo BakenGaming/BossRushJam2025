@@ -12,6 +12,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditsScreen;
     [SerializeField] private GameObject healthBar;
+    [SerializeField] private GameObject bossHealthBar;
 
     private void OnEnable() 
     {
@@ -19,11 +20,16 @@ public class UIController : MonoBehaviour
     }
     private void OnDisable() 
     {
+        PlayerHandler.onDamageReceived -= UpdatePlayerHealthUI;
 
+        EnemyHandler.onDamageReceived -= UpdateBossHealthUI;
     }
     public void Initialze()
     {
-        healthBar.GetComponent<Slider>().value = GameManager.i.GetPlayerGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
+        PlayerHandler.onDamageReceived += UpdatePlayerHealthUI;
+        EnemyHandler.onDamageReceived += UpdateBossHealthUI;
+        UpdatePlayerHealthUI();        
+        UpdateBossHealthUI();
     }
     private void InitializeMainMenu()
     {
@@ -33,7 +39,7 @@ public class UIController : MonoBehaviour
         
         settingsMenu.SetActive(false);
     }
-
+    #region Menus
     private void OpenPauseMenu()
     {
         pauseMenu.SetActive(true);
@@ -85,5 +91,17 @@ public class UIController : MonoBehaviour
     {
         SceneController.ExitGame();
     }
+    #endregion
+    #region UIFunctions
+    private void UpdatePlayerHealthUI()
+    {
+        healthBar.GetComponent<Slider>().value = GameManager.i.GetPlayerGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
+    }
+
+    private void UpdateBossHealthUI()
+    {
+        bossHealthBar.GetComponent<Slider>().value = GameManager.i.GetBossGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
+    }
+    #endregion
 
 }

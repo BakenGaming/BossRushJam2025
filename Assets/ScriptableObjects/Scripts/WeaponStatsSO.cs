@@ -9,6 +9,6 @@ public class WeaponStatsSO : ScriptableObject
     public Sprite[] projectileSprite;
     public int numberOfProjectilesPerShot;
     public float projectileSpeed;
-    public float projectileDamage;
+    public int projectileDamage;
     public float lifeTime;
 }

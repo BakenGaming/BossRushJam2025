@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     private static GameManager _i;
     public static GameManager i { get { return _i; } }
     [SerializeField] private Transform sysMessagePoint;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform playerSpawnPoint, bossSpawnPoint;
     [SerializeField] private Transform pooledObjectLocation;
     [SerializeField] private UIController _uiController;
     private BonusStatController _bonusStatController;
-    private GameObject playerGO;
+    private GameObject playerGO, bossGO;
     private bool isPaused;
 
 
@@ -35,9 +35,18 @@ public class GameManager : MonoBehaviour
 
     private void SpawnPlayerObject()
     {
-        playerGO = Instantiate(GameAssets.i.pfPlayerObject, spawnPoint);
+        playerGO = Instantiate(GameAssets.i.pfPlayerObject, playerSpawnPoint);
         playerGO.transform.parent = null;
         playerGO.GetComponent<IHandler>().Initialize();
+
+        SpawnBoss();
+    }
+
+    private void SpawnBoss()
+    {
+        bossGO = Instantiate(GameAssets.i.pfBossObject, bossSpawnPoint);
+        bossGO.transform.parent = null;
+        bossGO.GetComponent<IHandler>().Initialize();
         _uiController.Initialze();
     }
 
@@ -52,6 +61,7 @@ public class GameManager : MonoBehaviour
     
     public Transform GetSysMessagePoint(){ return sysMessagePoint;}
     public GameObject GetPlayerGO() { return playerGO; }
+    public GameObject GetBossGO() { return bossGO;}
     public bool GetIsPaused() { return isPaused; }
     public Transform GetPoolLocation(){return pooledObjectLocation;}
     public BonusStatController GetBonusStats() { return _bonusStatController; }

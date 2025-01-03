@@ -6,19 +6,19 @@ using TMPro;
 
 public class DamagePopup : MonoBehaviour
 {
-    public static DamagePopup Create(Vector3 position, int damageAmount, bool isCriticalHit)
+    public static DamagePopup Create(Vector3 position, int damageAmount)
     {
         Transform damagePopupTransform = Instantiate(GameAssets.i.pfDamagePopup, position, Quaternion.identity);
 
         DamagePopup damagePopup = damagePopupTransform.GetComponent<DamagePopup>();
-        damagePopup.Setup(damageAmount, isCriticalHit);
+        damagePopup.Setup(damageAmount);
 
         return damagePopup;
     }
 
     private static int sortingOrder;
 
-    private const float DISAPPEAR_TIMER_MAX = .2f;
+    private const float DISAPPEAR_TIMER_MAX = .3f;
 
     private TextMeshPro textMesh;
     private float disappearTimer;
@@ -33,7 +33,7 @@ public class DamagePopup : MonoBehaviour
     public void SetupCollected(int amount)
     {
         textMesh.SetText("+" + amount.ToString());
-        textMesh.fontSize = 6;
+        textMesh.fontSize = 10;
         textColor = UtilsClass.GetColorFromString("FF9B00");
 
         textMesh.color = textColor;
@@ -58,21 +58,11 @@ public class DamagePopup : MonoBehaviour
 
         moveVector = new Vector3(-1, 15) * .25f;
     }
-    public void Setup(int damageAmount, bool isCriticalHit)
+    public void Setup(int damageAmount)
     {
-        textMesh.SetText(damageAmount.ToString());
-        if (!isCriticalHit)
-        {
-            // Normal hit
-            textMesh.fontSize = 6;
-            textColor = UtilsClass.GetColorFromString("FFFFFF");
-        }
-        else
-        {
-            // Critical hit
-            textMesh.fontSize = 8;
-            textColor = UtilsClass.GetColorFromString("FFFB00");
-        }
+        textMesh.SetText($"-{damageAmount}");
+        textMesh.fontSize = 6;
+        textColor = UtilsClass.GetColorFromString("E300BE");
         textMesh.color = textColor;
         disappearTimer = DISAPPEAR_TIMER_MAX;
 

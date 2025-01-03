@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8622a95a4dfb14b82ce59574f47ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfSysMessage: {fileID: 0}
-  pfDamagePopup: {fileID: 0}
-  pfTextPopup: {fileID: 0}
+  pfSysMessage: {fileID: 1717597938717857286, guid: 605baae8ef7c2934ba152a20d63e58e0, type: 3}
+  pfDamagePopup: {fileID: 8390091064251752577, guid: af8bcb5fef0f92949922872cfd015ec4, type: 3}
+  pfTextPopup: {fileID: 6214723913669771062, guid: 9790ba08ce1f382419e826b432555a62, type: 3}
   pfPlayerObject: {fileID: 4015425077900747561, guid: 18bf801113cff9547b21d5f3c55578f9, type: 3}
+  pfBossObject: {fileID: 5773081352228781533, guid: a9c697fa4ca7ca947bc7a20ffefa71d3, type: 3}
   pfProjectile: {fileID: 2494639488997147307, guid: f8bb7da3faa368e44a39314007342791, type: 3}
-  pfParticleSystem: {fileID: 1065274637865538497, guid: 96c85c02d3bc15a4293d25c9c0f5068f, type: 3}
+  pfPlayerDamageParticles: {fileID: 1065274637865538497, guid: 96c85c02d3bc15a4293d25c9c0f5068f, type: 3}
   audioClipArray: []
   musicTrackArray: []

@@ -19,7 +19,7 @@ TagManager:
   - Collectable
   - WeaponTrigger
   - PlayerProjectile
-  - 
+  - Popup
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3632935853
+    locked: 0
+  - name: Popup
+    uniqueID: 2520330211
     locked: 0

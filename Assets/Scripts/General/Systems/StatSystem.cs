@@ -22,11 +22,6 @@ public class StatSystem
         moveSpeed = _stats.moveSpeed;
     }
 
-    public void UpdateHealth(int _amount)
-    {
-        health += _amount;
-    }
-    
     public int GetHealth (){return health;}
     public float GetMoveSpeed(){return moveSpeed;}
     public float GetSpinRate(){return spinRate;}
