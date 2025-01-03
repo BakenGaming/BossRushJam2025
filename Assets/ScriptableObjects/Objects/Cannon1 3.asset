@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4580f46a04a0702418931c4a4fd57561, type: 3}
-  m_Name: TEST1
+  m_Name: Cannon1 3
   m_EditorClassIdentifier: 
-  weaponName: TEST1
-  weaponPrefab: {fileID: 0}
-  projectilePrefab: {fileID: 2494639488997147307, guid: f8bb7da3faa368e44a39314007342791, type: 3}
-  projectileSpeed: 6
+  weaponName: Cannon1
+  weaponSprite: {fileID: 352784297, guid: bb109f47a70a22148938772c57e0494c, type: 3}
+  projectileSpeed: 3
   projectileDamage: 0
+  lifeTime: 2

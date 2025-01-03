@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BossProjectile
+    uniqueID: 2547222349
+    locked: 0
+  - name: Boss
+    uniqueID: 3169232335
+    locked: 0
+  - name: Collectable
+    uniqueID: 3545694453
+    locked: 0
+  - name: PlayerProjectile
+    uniqueID: 3798647717
+    locked: 0
+  - name: Player
+    uniqueID: 3632935853
+    locked: 0

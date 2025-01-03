@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager i { get { return _i; } }
     [SerializeField] private Transform sysMessagePoint;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform pooledObjectLocation;
     private GameObject playerGO;
     private bool isPaused;
 
@@ -38,15 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void SetupObjectPools()
     {
-        //Do the below for all objects that will need pooled for use
-        //ObjectPooler.SetupPool(OBJECT, SIZE, "NAME") == Object is pulled from GameAssets, Setup object with a SO that contains size and name
-        
-        //The below is placed in location where object is needed from pool
-        //==============================
-        //PREFAB_SCRIPT instance = ObjectPooler.DequeueObject<PREFAB_SCRIPT>("NAME");
-        //instance.gameobject.SetActive(true);
-        //instance.Initialize();
-        //==============================
+        ObjectPooler.SetupPool(GameAssets.i.pfSprinkle.GetComponent<Projectile>(), 30, "Sprinkle");
     }
     #endregion
 
@@ -56,5 +49,6 @@ public class GameManager : MonoBehaviour
     public Transform GetSysMessagePoint(){ return sysMessagePoint;}
     public GameObject GetPlayerGO() { return playerGO; }
     public bool GetIsPaused() { return isPaused; }
+    public Transform GetPoolLocation(){return pooledObjectLocation;}
 
 }

@@ -9,7 +9,7 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     [SerializeField] private List<GameObject> weaponPoints;
     [SerializeField] private Transform firePoint;
     private IInputHandler _handler;
-    private float rotationSpeed=120f;
+    private float rotationSpeed=60f;
     private bool initialized = false;
 
     #endregion

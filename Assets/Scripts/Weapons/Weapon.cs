@@ -16,8 +16,10 @@ public class Weapon : MonoBehaviour
         {
             onCooldown = true;
             coolDownTimer = timer;
-            GameObject newBullet = Instantiate(_weaponStatsSO.projectilePrefab, _handler.GetFirePoint().position, Quaternion.identity);
-            newBullet.GetComponent<Projectile>().Initialize(_weaponStatsSO, _handler.GetShootDirection());
+            Projectile newProjectile = ObjectPooler.DequeueObject<Projectile>("Sprinkle");
+            newProjectile.transform.position = _handler.GetFirePoint().position;
+            newProjectile.gameObject.SetActive(true);
+            newProjectile.Initialize(_weaponStatsSO, _handler.GetShootDirection());
         }
     }
 

@@ -6,8 +6,8 @@ using UnityEngine;
 public class WeaponStatsSO : ScriptableObject
 {
     public string weaponName;
-    public GameObject weaponPrefab;
-    public GameObject projectilePrefab;
+    public Sprite weaponSprite;
     public float projectileSpeed;
     public float projectileDamage;
+    public float lifeTime;
 }
