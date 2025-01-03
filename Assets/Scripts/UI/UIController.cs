@@ -7,20 +7,25 @@ using System;
 
 public class UIController : MonoBehaviour
 {
+    [SerializeField] private bool isMainMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditsScreen;
-    [SerializeField] private bool isMainMenu;
+    [SerializeField] private GameObject healthBar;
 
     private void OnEnable() 
     {
-        if (isMainMenu) Initialize();
+        if (isMainMenu) InitializeMainMenu();
     }
     private void OnDisable() 
     {
 
     }
-    private void Initialize()
+    public void Initialze()
+    {
+        healthBar.GetComponent<Slider>().value = GameManager.i.GetPlayerGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
+    }
+    private void InitializeMainMenu()
     {
         GetComponent<VolumeSettings>().Initialize();        
         if(!isMainMenu) pauseMenu.SetActive(false);

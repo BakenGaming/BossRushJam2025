@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4580f46a04a0702418931c4a4fd57561, type: 3}
+  m_Name: ChocolateChips
+  m_EditorClassIdentifier: 
+  weaponName: Chocolate Chips
+  projectileSprite:
+  - {fileID: -1976548530, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  numberOfProjectilesPerShot: 5
+  projectileSpeed: 10
+  projectileDamage: 3
+  lifeTime: 4

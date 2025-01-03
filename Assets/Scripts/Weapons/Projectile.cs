@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour
     public void Initialize(WeaponStatsSO _weapon, Vector3 _shootDir)
     {
         _renderer = GetComponent<SpriteRenderer>();
-        _renderer.sprite = _weapon.weaponSprite;
+        _renderer.sprite = _weapon.projectileSprite[Random.Range(0, _weapon.projectileSprite.Length)];
         shootDir = _shootDir;
         _weaponStatsSO = _weapon;
         transform.eulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(shootDir) - 90f);

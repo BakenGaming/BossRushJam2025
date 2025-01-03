@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform sysMessagePoint;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform pooledObjectLocation;
+    [SerializeField] private UIController _uiController;
     private BonusStatController _bonusStatController;
     private GameObject playerGO;
     private bool isPaused;
@@ -37,11 +38,12 @@ public class GameManager : MonoBehaviour
         playerGO = Instantiate(GameAssets.i.pfPlayerObject, spawnPoint);
         playerGO.transform.parent = null;
         playerGO.GetComponent<IHandler>().Initialize();
+        _uiController.Initialze();
     }
 
     public void SetupObjectPools()
     {
-        ObjectPooler.SetupPool(GameAssets.i.pfSprinkle.GetComponent<Projectile>(), 30, "Sprinkle");
+        ObjectPooler.SetupPool(GameAssets.i.pfProjectile.GetComponent<Projectile>(), 30, "Sprinkle");
     }
     #endregion
 

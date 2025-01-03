@@ -48,6 +48,7 @@ MonoBehaviour:
   pfDamagePopup: {fileID: 0}
   pfTextPopup: {fileID: 0}
   pfPlayerObject: {fileID: 4015425077900747561, guid: 18bf801113cff9547b21d5f3c55578f9, type: 3}
-  pfSprinkle: {fileID: 2494639488997147307, guid: f8bb7da3faa368e44a39314007342791, type: 3}
+  pfProjectile: {fileID: 2494639488997147307, guid: f8bb7da3faa368e44a39314007342791, type: 3}
+  pfParticleSystem: {fileID: 1065274637865538497, guid: 96c85c02d3bc15a4293d25c9c0f5068f, type: 3}
   audioClipArray: []
   musicTrackArray: []

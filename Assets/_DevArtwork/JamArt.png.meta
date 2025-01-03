@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,658 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Donut_Particle_J
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1046
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3b58cfcc12af74c97f0a50c81d092d
+      internalID: -943197245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 766
+        width: 260
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 804234904080f254b9be0986959d0757
+      internalID: 1892664162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_C
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 945
+        width: 74
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5fa57d4c6bf0e40b7863dd68a04de6
+      internalID: -709652837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_E
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 999
+        width: 14
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d11dfa465213fd449024f2589b2fe77
+      internalID: 1265094077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_F
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 999
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca6279867d54c3742b4cd4f81aa88289
+      internalID: -699971432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_G
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1000
+        width: 15
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b290a5deb52a314896914db83db9f35
+      internalID: -753861888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_H
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1003
+        width: 15
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c81b090517f1f743bb584a8e3f105eb
+      internalID: 751158812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_I
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 1002
+        width: 15
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55d697272dd8804fa5d9bb1cd6fbecf
+      internalID: 1691161673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_A
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 880
+        width: 73
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99d73e8090ab6d419361c65f144fa92
+      internalID: 2131908513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_D
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 864
+        width: 79
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90158050904786e41ba0673b89e3b32a
+      internalID: 120385857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PastryBag
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 763
+        width: 112
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538eaf98e455cc44cb295cf356234bbc
+      internalID: 394459622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PastryBag_Projectile
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 870
+        width: 64
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d9f81ccc4d4234f800afea905ac62c
+      internalID: 30555800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprinkles
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 772
+        width: 89
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac03814f0d067c4db53efb363bbd250
+      internalID: -60505434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprinkles_Projectile_A
+      rect:
+        serializedVersion: 2
+        x: 1637
+        y: 910
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23718b1b26f39294a927f1450f55f115
+      internalID: -1648461094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprinkles_Projectile_B
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 874
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e21daf0a1a0b6488b84fb443c2ffcd
+      internalID: -1841512260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Donut_Particle_B
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 767
+        width: 73
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dd8d474e51c19946be318bbfe402e55
+      internalID: 847528552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprinkles_Projectile_C
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 823
+        width: 19
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5b8f5b31ec90b4c9300989f218ecba
+      internalID: 1591815562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SugarCube
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 719
+        width: 65
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5e06bb3aa86dd4ba94d58a7429232c
+      internalID: 1254832365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indicator
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 411
+        width: 306
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f05c9da2e8d0484ca5d7d1ef4b33953
+      internalID: 1838851844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LolliPop
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 478
+        width: 47
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571af08af3d6ed946b1d6ef6bdc8f45f
+      internalID: 1718831515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChocolateSyrup
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 434
+        width: 106
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa22227806a071f4ca21bcec84b37417
+      internalID: -1499230905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChocolateSyrup_Projectile
+      rect:
+        serializedVersion: 2
+        x: 1341
+        y: 479
+        width: 32
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ef784ae8811bb438d881e46ea72a1e
+      internalID: -883584206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrapeJelly
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 464
+        width: 99
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d768fa1b79942984a834dc6f604c1c0e
+      internalID: 255493450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrapeJelly_Projectile
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 512
+        width: 74
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5c1ae6a0aff60499356ff8c785ce41
+      internalID: -813076857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthBar
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 235
+        width: 454
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10364802ae144bb44b8e7688823fe6ce
+      internalID: 1820020843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthBar_End
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 206
+        width: 95
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6fc3a8e5e7f384080d6c43740ce025
+      internalID: -2057522830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyBeans
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 108
+        width: 169
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1208105b90f88934999fe9718261f6af
+      internalID: -1689911487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JellyBeans_Projectile
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 207
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c842bd2e044aa3c46a37a7250d62ac2e
+      internalID: 607590738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChocolateChips
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 174
+        width: 210
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c84d1079f7488c4c9fd44b413571447
+      internalID: 1589921311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChocolateChips_Particle
+      rect:
+        serializedVersion: 2
+        x: 1773
+        y: 210
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66fc557e48568948a0c148eac063ccf
+      internalID: -1976548530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcecreamCone
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 189
+        width: 104
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702ea0b66d514a346b1f5488b00e0631
+      internalID: -1824713064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +770,38 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChocolateChips: 1589921311
+      ChocolateChips_Particle: -1976548530
+      ChocolateSyrup: -1499230905
+      ChocolateSyrup_Projectile: -883584206
+      Donut: 1892664162
+      Donut_Particle_A: 2131908513
+      Donut_Particle_B: 847528552
+      Donut_Particle_C: -709652837
+      Donut_Particle_D: 120385857
+      Donut_Particle_E: 1265094077
+      Donut_Particle_F: -699971432
+      Donut_Particle_G: -753861888
+      Donut_Particle_H: 751158812
+      Donut_Particle_I: 1691161673
+      Donut_Particle_J: -943197245
+      GrapeJelly: 255493450
+      GrapeJelly_Projectile: -813076857
+      HealthBar: 1820020843
+      HealthBar_End: -2057522830
+      IcecreamCone: -1824713064
+      Indicator: 1838851844
+      JellyBeans: -1689911487
+      JellyBeans_Projectile: 607590738
+      LolliPop: 1718831515
+      PastryBag: 394459622
+      PastryBag_Projectile: 30555800
+      Sprinkles: -60505434
+      Sprinkles_Projectile_A: -1648461094
+      Sprinkles_Projectile_B: -1841512260
+      Sprinkles_Projectile_C: 1591815562
+      SugarCube: 1254832365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
