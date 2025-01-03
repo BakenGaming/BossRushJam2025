@@ -6,13 +6,13 @@ public class StatSystem
 {
     private int health;
     private float moveSpeed;
-    private float jumpPower;
+    private float spinRate;
 
     public StatSystem (PlayerStatsSO _stats)
     {
-        health = _stats.health;
-        moveSpeed = _stats.moveSpeed;
-        jumpPower = _stats.jumpPower;
+        health = _stats.baseHealth;
+        moveSpeed = _stats.baseMoveSpeed;
+        spinRate = _stats.baseSpinRate;
 
     }
 
@@ -20,10 +20,14 @@ public class StatSystem
     {
         health = _stats.health;
         moveSpeed = _stats.moveSpeed;
-
     }
 
-    public int GetPlayerHealth (){return health;}
+    public void UpdateHealth(int _amount)
+    {
+        health += _amount;
+    }
+    
+    public int GetHealth (){return health;}
     public float GetMoveSpeed(){return moveSpeed;}
-    public float GetJumpPower(){return jumpPower;}
+    public float GetSpinRate(){return spinRate;}
 }

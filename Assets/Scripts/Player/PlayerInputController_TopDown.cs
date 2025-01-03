@@ -102,7 +102,8 @@ public class PlayerInputController_TopDown : MonoBehaviour, IInputHandler
         }
         
         Vector2 moveSpeed = moveInput.normalized;
-        playerRB.velocity = new Vector2(moveSpeed.x * _playerStats.GetMoveSpeed(), moveSpeed.y *.5f * _playerStats.GetMoveSpeed());    
+        playerRB.velocity = new Vector2(moveSpeed.x * _playerStats.GetMoveSpeed() 
+        + GameManager.i.GetBonusStats().GetBonusMoveSpeed(), moveSpeed.y *.5f * _playerStats.GetMoveSpeed());    
     }
 
     #endregion

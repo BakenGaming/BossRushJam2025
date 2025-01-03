@@ -50,7 +50,9 @@ public class PlayerHandler : MonoBehaviour, IHandler
     private void SetupPlayer()
     {
         _statSystem = new StatSystem(playerStatsSO);
-        _healthSystem = new HealthSystem(_statSystem.GetPlayerHealth());
+        _healthSystem = new HealthSystem(_statSystem.GetHealth());
+        _healthSystem.IncreaseMaxHealth(GameManager.i.GetBonusStats().GetBonusHealth());
+        
         GetComponent<IInputHandler>().Initialize();
         GetComponent<IAttackHandler>().Initialize();
     }

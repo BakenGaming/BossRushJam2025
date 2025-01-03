@@ -8,8 +8,8 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #region Variables
     [SerializeField] private List<GameObject> weaponPoints;
     [SerializeField] private Transform firePoint;
-    private IInputHandler _handler;
-    private float rotationSpeed=60f;
+    private IHandler _playerHandler;
+    private IInputHandler _inputHandler;
     private bool initialized = false;
 
     #endregion
@@ -17,9 +17,9 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #region Initialize
     public void Initialize()
     {
-        _handler = GetComponent<IInputHandler>();
+        _playerHandler = GetComponent<IHandler>();
+        _inputHandler = GetComponent<IInputHandler>();
         initialized = true;
-        
     }
 
     private void OnDisable() 
@@ -40,13 +40,14 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
         if(!initialized) return;
         foreach(GameObject weapon in weaponPoints)
         {
-            weapon.transform.Rotate(new Vector3(0, 0, rotationSpeed) * Time.deltaTime);
+            weapon.transform.Rotate(new Vector3(0, 0, _playerHandler.GetStatSystem().GetSpinRate() 
+            + GameManager.i.GetBonusStats().GetBonusSpinRate()) * Time.deltaTime);
         }
     }
     #endregion
 
     #region Weapons
-    public Vector3 GetShootDirection() { return _handler.GetShootDirection();}
+    public Vector3 GetShootDirection() { return _inputHandler.GetShootDirection();}
     public Transform GetFirePoint(){ return firePoint;}
 
     #endregion

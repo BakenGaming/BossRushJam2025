@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform sysMessagePoint;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform pooledObjectLocation;
+    private BonusStatController _bonusStatController;
     private GameObject playerGO;
     private bool isPaused;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Initialize() 
     {
+        _bonusStatController = new BonusStatController(0,0,0);
         SpawnPlayerObject();
     }
 
@@ -50,5 +52,6 @@ public class GameManager : MonoBehaviour
     public GameObject GetPlayerGO() { return playerGO; }
     public bool GetIsPaused() { return isPaused; }
     public Transform GetPoolLocation(){return pooledObjectLocation;}
+    public BonusStatController GetBonusStats() { return _bonusStatController; }
 
 }

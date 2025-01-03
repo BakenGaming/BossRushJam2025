@@ -5,8 +5,8 @@ using UnityEngine;
 public interface IHandler
 {
     public void Initialize();
-    public abstract HealthSystem GetHealthSystem();
-    public abstract void UpdateHealth();
-    public abstract void HandleDeath();
-    public abstract StatSystem GetStatSystem();
+    public void UpdateHealth();
+    public void HandleDeath();
+    public HealthSystem GetHealthSystem();
+    public StatSystem GetStatSystem();
 }
