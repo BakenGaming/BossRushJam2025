@@ -18,10 +18,14 @@ public class HealthSystem
         if (currentHealth < 0) currentHealth = 0;
     }
 
-    public void RestoreHealth(int amount)
+    public void RestoreHealth(int amount, bool _fullHealth)
     {
-        currentHealth += amount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        if(_fullHealth) currentHealth = maxHealth;
+        else
+        {
+            currentHealth += amount;
+            if (currentHealth > maxHealth) currentHealth = maxHealth;
+        }
     }
 
     public float GetMaxHealth()

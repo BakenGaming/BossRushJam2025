@@ -11,12 +11,14 @@ public class WeaponSlot : MonoBehaviour, IWeaponSlotHandler
     {
         slotOccupied = true;
         equippedWeapon = Instantiate(_weapon, thisSlotTransform);
+        Debug.Log($"{_weapon.GetComponent<Weapon>().GetWeaponStats().weaponName} Added");
     }
 
 
     public void RemoveWeapon()
     {
         slotOccupied = false;
+        Debug.Log($"{equippedWeapon.GetComponent<Weapon>().GetWeaponStats().weaponName} Removed");
         Destroy(equippedWeapon.gameObject);
     }
   
@@ -25,7 +27,6 @@ public class WeaponSlot : MonoBehaviour, IWeaponSlotHandler
     {
         slotOccupied = false;
         thisSlotTransform = transform.Find("Slot");    
-        Debug.Log("Slot Initialized");
     }
 
     public GameObject GetEquippedWeapon(){return equippedWeapon;}

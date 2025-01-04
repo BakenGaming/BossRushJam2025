@@ -18,24 +18,16 @@ public class WeaponSystem : MonoBehaviour
     }
 
     [SerializeField] private GameObject[] gameWeapons;
-
     private void Awake() 
     {
         _i = this;    
     }
-    private void Update() 
-    {
-#if UNITY_EDITOR
-    if(Input.GetKeyDown(KeyCode.J))
+    public void AddNewWeapon()
     {
         OnEquipNewWeapon?.Invoke(this, 
             new OnEquipNewWeaponEventArgs { newWeapon = gameWeapons[UnityEngine.Random.Range(0, gameWeapons.Length)],
             slot = UnityEngine.Random.Range(0,8) }
             );
     }
-
-#endif        
-    }
-
     public GameObject[] GetWeapons(){return gameWeapons;}
 }

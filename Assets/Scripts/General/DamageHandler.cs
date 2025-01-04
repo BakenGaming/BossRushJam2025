@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageHandler : MonoBehaviour, IDamageable
 {
+    [SerializeField] private bool isTesting;
     private IHandler handler;
     private bool isEnemy;
     
@@ -28,7 +29,15 @@ public class DamageHandler : MonoBehaviour, IDamageable
 
     private void HandleDeath()
     {
-        handler.HandleDeath();
-        if(isEnemy) Destroy(gameObject);
+        if(isTesting)
+        {
+            handler.GetHealthSystem().RestoreHealth(0,true);
+            handler.UpdateHealth();
+        }
+        else
+        {
+            handler.HandleDeath();
+            if(isEnemy) Destroy(gameObject);
+        }
     }
 }

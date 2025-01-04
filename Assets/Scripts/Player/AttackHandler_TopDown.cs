@@ -10,20 +10,18 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     [SerializeField] private Transform firePoint;
     private IHandler _playerHandler;
     private IInputHandler _inputHandler;
-    private bool initialized = false;
+    private bool initialized = false, addingWeapon = false;
+    private float _waitTime = .1f, _waitTimer;
 
     #endregion
 
     #region Initialize
     public void Initialize()
     {
-        int i = 0;
         _playerHandler = GetComponent<IHandler>();
         _inputHandler = GetComponent<IInputHandler>();
         foreach(GameObject _weaponPoint in weaponPoints)
         {
-            Debug.Log($"Initialize Slot {i}");
-            i++;
             _weaponPoint.GetComponent<IWeaponSlotHandler>().Initialize();
         }
         WeaponSystem.i.OnEquipNewWeapon += AddWeapon;
@@ -32,7 +30,7 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
 
     private void OnDisable() 
     {
-        
+        WeaponSystem.i.OnEquipNewWeapon -= AddWeapon;
     }
 
     #endregion
@@ -41,7 +39,11 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     private void Update() 
     {
         if(GameManager.i.GetIsPaused()) return;
-        else RotateWeapons();    
+        else RotateWeapons();  
+
+        if(addingWeapon) _waitTimer -= Time.deltaTime;
+
+        if(_waitTimer <=0) addingWeapon = false;  
     }
 
     private void RotateWeapons()
@@ -58,12 +60,17 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #region Weapons
     public void AddWeapon(object sender, WeaponSystem.OnEquipNewWeaponEventArgs e)
     {
+        if(addingWeapon) return;
+        _waitTimer = _waitTime;
+        addingWeapon = true;
         IWeaponSlotHandler _handler = weaponPoints[e.slot].GetComponent<IWeaponSlotHandler>();
         if(_handler.IsSlotOccupied())
         {
+            Debug.Log("Occupied");
             _handler.RemoveWeapon();
+            _handler.AddWeapon(e.newWeapon);
         }
-        _handler.AddWeapon(e.newWeapon);
+        else {Debug.Log("UnOccupied"); _handler.AddWeapon(e.newWeapon);}
 
     }
     public Vector3 GetShootDirection() { return _inputHandler.GetShootDirection();}
