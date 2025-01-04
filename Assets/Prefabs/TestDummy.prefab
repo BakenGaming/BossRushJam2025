@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 264018784150237871}
   - component: {fileID: 342776286508726177}
   - component: {fileID: 2774021475469281535}
+  - component: {fileID: 5314412656207579260}
   m_Layer: 7
   m_Name: TestDummy
   m_TagString: Untagged
@@ -186,3 +187,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStatsSO: {fileID: 11400000, guid: 6236253640693d94bbe4e0ce1ff5eaed, type: 2}
+--- !u!114 &5314412656207579260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5773081352228781533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a01fac42027bb24abafcd2117865284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

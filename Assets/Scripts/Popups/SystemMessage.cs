@@ -28,7 +28,7 @@ public static SystemMessage Create(string message)
 
     public void Setup(string msg)
     {
-            textColor = Color.white;
+            textColor = Color.green;
             sysMsgText.text = msg;
             sysMsgText.color = textColor;     
             

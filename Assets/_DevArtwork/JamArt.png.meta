@@ -623,7 +623,7 @@ TextureImporter:
         height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 27, y: 16, z: 27, w: 16}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -748,7 +748,7 @@ TextureImporter:
         width: 104
         height: 185
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,6 +756,27 @@ TextureImporter:
       bones: []
       spriteID: 702ea0b66d514a346b1f5488b00e0631
       internalID: -1824713064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Indicato
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 73
+        width: 61
+        height: 95
+      alignment: 9
+      pivot: {x: 0.46883154, y: 0.745171}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 946194dae991e3f458e47d9914fe217b
+      internalID: 2049815523
       vertices: []
       indices: 
       edges: []
@@ -791,6 +812,7 @@ TextureImporter:
       HealthBar: 1820020843
       HealthBar_End: -2057522830
       IcecreamCone: -1824713064
+      Indicato: 2049815523
       Indicator: 1838851844
       JellyBeans: -1689911487
       JellyBeans_Projectile: 607590738

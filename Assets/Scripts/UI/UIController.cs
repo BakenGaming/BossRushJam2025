@@ -13,6 +13,12 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject creditsScreen;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject bossHealthBar;
+    [SerializeField] private TextMeshProUGUI bossName;
+    [SerializeField] private TextMeshProUGUI sugarText;
+    [SerializeField] private TextMeshProUGUI notificationText;
+
+    private bool isTextReacting;
+    private float originalTextSize;
 
     private void OnEnable() 
     {
@@ -22,6 +28,8 @@ public class UIController : MonoBehaviour
     {
         PlayerHandler.onDamageReceived -= UpdatePlayerHealthUI;
         EnemyHandler.onDamageReceived -= UpdateBossHealthUI;
+        LootObject.OnSugarCollected -= SugarGain;
+        SugarManager.OnSugarDecrease -= SugarLoss;
         PlayerInputController_TopDown.OnPauseGame -= OpenPauseMenu;
         PlayerInputController_TopDown.OnUnpauseGame -= ClosePauseMenu;
     }
@@ -29,11 +37,15 @@ public class UIController : MonoBehaviour
     {
         PlayerHandler.onDamageReceived += UpdatePlayerHealthUI;
         EnemyHandler.onDamageReceived += UpdateBossHealthUI;
+        LootObject.OnSugarCollected += SugarGain;
+        SugarManager.OnSugarDecrease += SugarLoss;
         PlayerInputController_TopDown.OnPauseGame += OpenPauseMenu;
         PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
 
-        UpdatePlayerHealthUI();        
+        UpdatePlayerHealthUI();
+        UpdatePlayerUI();        
         UpdateBossHealthUI();
+        UpdateBossNameUI();
     }
     private void InitializeMainMenu()
     {
@@ -102,9 +114,29 @@ public class UIController : MonoBehaviour
         healthBar.GetComponent<Slider>().value = GameManager.i.GetPlayerGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
     }
 
+    private void UpdatePlayerUI()
+    {
+        sugarText.text = SugarManager.i.GetCurrentSugarCount().ToString();
+    }
+
+    private void SugarLoss(bool _isMiss, int _amount)
+    {
+        sugarText.text = SugarManager.i.GetCurrentSugarCount().ToString();
+    }
+
+    private void SugarGain()
+    {
+        sugarText.text = SugarManager.i.GetCurrentSugarCount().ToString();
+    }
+
     private void UpdateBossHealthUI()
     {
         bossHealthBar.GetComponent<Slider>().value = GameManager.i.GetBossGO().GetComponent<IHandler>().GetHealthSystem().GetHealthPercentage();
+    }
+
+    private void UpdateBossNameUI()
+    {
+        bossName.SetText(GameManager.i.GetBossGO().GetComponent<EnemyHandler>().GetEnemyStatsSO().enemyName);
     }
     #endregion
 

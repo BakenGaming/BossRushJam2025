@@ -56,7 +56,7 @@ public class EnemyHandler : MonoBehaviour, IHandler
     }
     #endregion
 
-    #region Player Setup
+    #region Enemy Setup
     private void SetupEnemy()
     {
         _statSystem = new StatSystem(enemyStatsSO);
@@ -65,6 +65,10 @@ public class EnemyHandler : MonoBehaviour, IHandler
         
     //  GetComponent<IAttackHandler>().Initialize();
         GetComponent<IDamageable>().InitializeDamage(true);
+        GetComponent<LootBag>().Initialize();
     }
+    #endregion
+    #region Get Functions
+    public EnemyStatsSO GetEnemyStatsSO(){return enemyStatsSO;}
     #endregion
 }

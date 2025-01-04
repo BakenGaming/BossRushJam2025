@@ -6,12 +6,12 @@ using CodeMonkey.Utils;
 
 public class TextPopUp : MonoBehaviour
 {
-    public static TextPopUp Create(Vector3 position, string text)
+    public static TextPopUp Create(Vector3 position, string text, bool _isSugar)
     {
         Transform textPopupTransform = Instantiate(GameAssets.i.pfTextPopup, position, Quaternion.identity);
 
         TextPopUp textPopup = textPopupTransform.GetComponent<TextPopUp>();
-        textPopup.Setup(text);
+        textPopup.Setup(text, _isSugar);
 
         return textPopup;
     }
@@ -30,11 +30,21 @@ public class TextPopUp : MonoBehaviour
         textMesh = transform.GetComponent<TextMeshPro>();
     }
 
-    public void Setup(string text)
+    public void Setup(string text, bool _isSugarDecrease)
     {
         textMesh.SetText(text);
-        textMesh.fontSize = 20;
-        textColor = UtilsClass.GetColorFromString("FFFFFF");
+        
+        if(!_isSugarDecrease)
+        {    
+            textMesh.fontSize = 10;
+            textColor = UtilsClass.GetColorFromString("0FB50A");
+        }
+        else
+        {
+            textMesh.fontSize = 10;
+            textColor = UtilsClass.GetColorFromString("910505");
+        }
+
 
         textMesh.color = textColor;
         disappearTimer = DISAPPEAR_TIMER_MAX;

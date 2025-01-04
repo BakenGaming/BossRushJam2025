@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 
 public class GameAssets : MonoBehaviour
 {
+    #region Setup
     private static GameAssets _i;
 
     public static GameAssets i
@@ -21,15 +22,28 @@ public class GameAssets : MonoBehaviour
     {
         _i = this;    
     }
-
+    #endregion
+    #region Object Assets
+    [Header("Messages and Popups")]
     public Transform pfSysMessage;
     public Transform pfDamagePopup;
     public Transform pfTextPopup;
+    [Header("Player Specific")]
     public GameObject pfPlayerObject;
-    public GameObject pfBossObject;
-    public GameObject pfProjectile;
     public GameObject pfPlayerDamageParticles;
-  
+    [Header("Universal")]
+    
+    [Header("Boss Specific")]
+    public GameObject pfBossObject;
+    public GameObject pfLootObject;
+
+    [Header("UI")]
+    public GameObject pfWeaponOptionRoulette;
+    #endregion
+
+    #region Sound Assets
+    
+    [Header("Sound")]
     public SoundAudioClip[] audioClipArray;
     public MusicAudioClip[] musicTrackArray;
 
@@ -52,4 +66,5 @@ public class GameAssets : MonoBehaviour
         [Range(0f, 1F)]
         public float volume;
     }
+    #endregion
 }

@@ -7,6 +7,7 @@ public class WeaponStatsSO : ScriptableObject
 {
     public string weaponName;
     public string projectileName;
+    public Sprite weaponSprite;
     public Sprite[] projectileSprite;
     public GameObject projectileGO;
     public int numberOfProjectilesPerShot;

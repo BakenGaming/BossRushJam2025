@@ -18,14 +18,24 @@ public class WeaponSystem : MonoBehaviour
     }
 
     [SerializeField] private GameObject[] gameWeapons;
-    private void Awake() 
+    public void Initialize() 
     {
-        _i = this;    
+        _i = this;  
+        WeaponOption.OnWeaponSelected += AddNewWeapon;
     }
-    public void AddNewWeapon()
+    private void OnDisable() 
+    {
+        WeaponOption.OnWeaponSelected -= AddNewWeapon;    
+    }
+
+    public void EquipFirstWeapon()
+    {
+        AddNewWeapon(gameWeapons[UnityEngine.Random.Range(0, gameWeapons.Length)]);
+    }
+    public void AddNewWeapon(GameObject _weapon)
     {
         OnEquipNewWeapon?.Invoke(this, 
-            new OnEquipNewWeaponEventArgs { newWeapon = gameWeapons[UnityEngine.Random.Range(0, gameWeapons.Length)],
+            new OnEquipNewWeaponEventArgs { newWeapon = _weapon,
             slot = UnityEngine.Random.Range(0,8) }
             );
     }

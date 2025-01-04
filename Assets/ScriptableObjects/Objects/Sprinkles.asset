@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Sprinkles
   projectileName: Sprinkle
+  weaponSprite: {fileID: -60505434, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   projectileSprite:
   - {fileID: -1648461094, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   - {fileID: -1841512260, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}

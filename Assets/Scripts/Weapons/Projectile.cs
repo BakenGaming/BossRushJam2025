@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using System;
 
 public class Projectile : MonoBehaviour
 {
+    public static event Action<int, bool> OnProjectileMiss;
     private Vector3 shootDir;
     private WeaponStatsSO _weaponStatsSO;
     private SpriteRenderer _renderer;
@@ -14,7 +16,7 @@ public class Projectile : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
         
         if(_weapon.projectileSprite.Length > 1)
-            _renderer.sprite = _weapon.projectileSprite[Random.Range(0, _weapon.projectileSprite.Length)];
+            _renderer.sprite = _weapon.projectileSprite[UnityEngine.Random.Range(0, _weapon.projectileSprite.Length)];
         
         shootDir = _shootDir;
         _weaponStatsSO = _weapon;
@@ -33,7 +35,10 @@ public class Projectile : MonoBehaviour
     private void UpdateLifeTimer()
     {
         lifeTimer -=Time.deltaTime;
-        if (lifeTimer <= 0) ObjectPooler.EnqueueObject(this, "Sprinkle");
+        if (lifeTimer <= 0) 
+        {
+            ObjectPooler.EnqueueObject(this, "Sprinkle");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D _trigger) 
@@ -46,6 +51,8 @@ public class Projectile : MonoBehaviour
         }
         else
         {
+            OnProjectileMiss?.Invoke(1, false);
+            TextPopUp.Create(transform.position, "-1", true);
             ObjectPooler.EnqueueObject(this, "Sprinkle");
         }
     }
