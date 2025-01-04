@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: ChoclateSyrup
   m_EditorClassIdentifier: 
   weaponName: Chocolate Syrup
+  projectileName: Chocolate Syrup
   projectileSprite:
   - {fileID: -883584206, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  projectileGO: {fileID: 6839680892988738548, guid: b165ded16a21609438914846bb71c342, type: 3}
   numberOfProjectilesPerShot: 1
   projectileSpeed: 1
   projectileDamage: 10

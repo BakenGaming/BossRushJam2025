@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
         {
             onCooldown = true;
             coolDownTimer = timer;
-            Projectile newProjectile = ObjectPooler.DequeueObject<Projectile>("Sprinkle");
+            Projectile newProjectile = ObjectPooler.DequeueObject<Projectile>(_weaponStatsSO.projectileName);
             newProjectile.transform.position = _handler.GetFirePoint().position;
             newProjectile.gameObject.SetActive(true);
             newProjectile.Initialize(_weaponStatsSO, _handler.GetShootDirection());
@@ -33,4 +33,6 @@ public class Weapon : MonoBehaviour
             onCooldown = false;
         }
     }
+
+    public WeaponStatsSO GetWeaponStats(){return _weaponStatsSO;}
 }

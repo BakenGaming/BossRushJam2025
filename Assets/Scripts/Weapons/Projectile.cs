@@ -12,7 +12,10 @@ public class Projectile : MonoBehaviour
     public void Initialize(WeaponStatsSO _weapon, Vector3 _shootDir)
     {
         _renderer = GetComponent<SpriteRenderer>();
-        _renderer.sprite = _weapon.projectileSprite[Random.Range(0, _weapon.projectileSprite.Length)];
+        
+        if(_weapon.projectileSprite.Length > 1)
+            _renderer.sprite = _weapon.projectileSprite[Random.Range(0, _weapon.projectileSprite.Length)];
+        
         shootDir = _shootDir;
         _weaponStatsSO = _weapon;
         transform.eulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(shootDir) - 90f);
@@ -21,6 +24,8 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
+        if(GameManager.i.GetIsPaused()) return;
+
         transform.position += shootDir * _weaponStatsSO.projectileSpeed * Time.deltaTime;
         UpdateLifeTimer();
     }
@@ -35,7 +40,13 @@ public class Projectile : MonoBehaviour
     {
         IDamageable damageable= _trigger.gameObject.GetComponent<IDamageable>();
         if(damageable != null)
-        damageable.TakeDamage(_weaponStatsSO.projectileDamage);
-        ObjectPooler.EnqueueObject(this, "Sprinkle");
+        {
+            damageable.TakeDamage(_weaponStatsSO.projectileDamage);
+            ObjectPooler.EnqueueObject(this, "Sprinkle");
+        }
+        else
+        {
+            ObjectPooler.EnqueueObject(this, "Sprinkle");
+        }
     }
 }

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: JellyBeans
   m_EditorClassIdentifier: 
   weaponName: Jelly Beans
+  projectileName: Jelly Beans
   projectileSprite:
   - {fileID: 607590738, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  projectileGO: {fileID: 8395348217798867747, guid: 12c5566c247eafd4488a225cb164dc14, type: 3}
   numberOfProjectilesPerShot: 3
   projectileSpeed: 8
   projectileDamage: 7

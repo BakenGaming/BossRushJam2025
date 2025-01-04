@@ -83,7 +83,11 @@ public class PlayerInputController_TopDown : MonoBehaviour, IInputHandler
     private void Update() 
     {
         if(!GameManager.i.GetIsPaused()) moveInput = _move.ReadValue<Vector2>();
-        else playerRB.velocity = Vector2.zero;
+        else 
+        {
+            playerRB.velocity = Vector2.zero;
+            return;
+        }
 
         Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
         aimDirection = (mousePosition - transform.position).normalized;

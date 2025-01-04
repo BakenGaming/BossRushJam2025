@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: IcecreamCone
   m_EditorClassIdentifier: 
   weaponName: Icecream Cone
+  projectileName: Icecream Cone
   projectileSprite:
   - {fileID: -1824713064, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  projectileGO: {fileID: 2242274611677819864, guid: eaf6f1b670817fc408c0988b2ee229e3, type: 3}
   numberOfProjectilesPerShot: 1
   projectileSpeed: 3
   projectileDamage: 15

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerSpawnPoint, bossSpawnPoint;
     [SerializeField] private Transform pooledObjectLocation;
     [SerializeField] private UIController _uiController;
+    private WeaponSystem _weaponSystem;
     private BonusStatController _bonusStatController;
     private GameObject playerGO, bossGO;
     private bool isPaused;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Awake() 
     {
         _i = this;  
+        _weaponSystem = GetComponent<WeaponSystem>();
         SetupObjectPools();  
         Initialize();
     }
@@ -52,7 +54,9 @@ public class GameManager : MonoBehaviour
 
     public void SetupObjectPools()
     {
-        ObjectPooler.SetupPool(GameAssets.i.pfProjectile.GetComponent<Projectile>(), 30, "Sprinkle");
+        foreach (GameObject _weapon in _weaponSystem.GetWeapons())
+            ObjectPooler.SetupPool(_weapon.GetComponent<Weapon>().GetWeaponStats().projectileGO.GetComponent<Projectile>(),
+                20, _weapon.GetComponent<Weapon>().GetWeaponStats().projectileName);
     }
     #endregion
 

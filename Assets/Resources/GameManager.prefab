@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 4653645020629980836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 8998500215005016089}
   - component: {fileID: 7212552751618260738}
   - component: {fileID: 9164813154432083013}
+  - component: {fileID: 8646081480546355142}
   m_Layer: 3
   m_Name: GameManager
   m_TagString: Untagged
@@ -117,6 +118,27 @@ MonoBehaviour:
   masterMixer: {fileID: 0}
   sfxMixer: {fileID: 0}
   musicMixer: {fileID: 0}
+--- !u!114 &8646081480546355142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839467924799958604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a938f1300fbe10344a28a2d97c5e65df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameWeapons:
+  - {fileID: 1173612021158776283, guid: e68cf22683e212642afafb993fbcc22c, type: 3}
+  - {fileID: 1705227251709099745, guid: 83e20bffa77b7e74a9b4d0b04fc98b48, type: 3}
+  - {fileID: 7512191158502618840, guid: 9d4c67fb1c8383f438600424da4a9a51, type: 3}
+  - {fileID: 769519908603940578, guid: d6be17d83aac6c845af8551ac8328950, type: 3}
+  - {fileID: 119082192766179601, guid: 9d4e71e172042784a8dbd073a48c1ba5, type: 3}
+  - {fileID: 2720615701494612799, guid: 528921a6845798845987eff6c77e25b1, type: 3}
+  - {fileID: 3506891965288180885, guid: 9e82ad0fef319e44d832d3e1d2096734, type: 3}
+  - {fileID: 7491233305121698862, guid: 83e522a41255f5c499c8b99a2cdc36c4, type: 3}
 --- !u!1 &6068455550493748334
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 6068455550493748334}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.7, z: 0}
+  m_LocalPosition: {x: 0, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

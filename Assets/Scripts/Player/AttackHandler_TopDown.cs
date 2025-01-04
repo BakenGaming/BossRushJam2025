@@ -17,8 +17,16 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #region Initialize
     public void Initialize()
     {
+        int i = 0;
         _playerHandler = GetComponent<IHandler>();
         _inputHandler = GetComponent<IInputHandler>();
+        foreach(GameObject _weaponPoint in weaponPoints)
+        {
+            Debug.Log($"Initialize Slot {i}");
+            i++;
+            _weaponPoint.GetComponent<IWeaponSlotHandler>().Initialize();
+        }
+        WeaponSystem.i.OnEquipNewWeapon += AddWeapon;
         initialized = true;
     }
 
@@ -32,7 +40,8 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #region Loop
     private void Update() 
     {
-        RotateWeapons();    
+        if(GameManager.i.GetIsPaused()) return;
+        else RotateWeapons();    
     }
 
     private void RotateWeapons()
@@ -47,8 +56,19 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
     #endregion
 
     #region Weapons
+    public void AddWeapon(object sender, WeaponSystem.OnEquipNewWeaponEventArgs e)
+    {
+        IWeaponSlotHandler _handler = weaponPoints[e.slot].GetComponent<IWeaponSlotHandler>();
+        if(_handler.IsSlotOccupied())
+        {
+            _handler.RemoveWeapon();
+        }
+        _handler.AddWeapon(e.newWeapon);
+
+    }
     public Vector3 GetShootDirection() { return _inputHandler.GetShootDirection();}
     public Transform GetFirePoint(){ return firePoint;}
+    
 
     #endregion
 }

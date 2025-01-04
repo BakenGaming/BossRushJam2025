@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Sprinkles
   m_EditorClassIdentifier: 
   weaponName: Sprinkles
+  projectileName: Sprinkle
   projectileSprite:
   - {fileID: -1648461094, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   - {fileID: -1841512260, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   - {fileID: 1591815562, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  projectileGO: {fileID: 3035411719481594864, guid: 4342d90845f329b419a9496d94d5c456, type: 3}
   numberOfProjectilesPerShot: 8
   projectileSpeed: 5
   projectileDamage: 3

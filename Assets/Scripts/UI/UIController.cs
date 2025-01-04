@@ -21,13 +21,17 @@ public class UIController : MonoBehaviour
     private void OnDisable() 
     {
         PlayerHandler.onDamageReceived -= UpdatePlayerHealthUI;
-
         EnemyHandler.onDamageReceived -= UpdateBossHealthUI;
+        PlayerInputController_TopDown.OnPauseGame -= OpenPauseMenu;
+        PlayerInputController_TopDown.OnUnpauseGame -= ClosePauseMenu;
     }
     public void Initialze()
     {
         PlayerHandler.onDamageReceived += UpdatePlayerHealthUI;
         EnemyHandler.onDamageReceived += UpdateBossHealthUI;
+        PlayerInputController_TopDown.OnPauseGame += OpenPauseMenu;
+        PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
+
         UpdatePlayerHealthUI();        
         UpdateBossHealthUI();
     }
