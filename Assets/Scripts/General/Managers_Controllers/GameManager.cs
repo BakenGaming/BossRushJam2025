@@ -54,8 +54,8 @@ public class GameManager : MonoBehaviour
         bossGO = Instantiate(GameAssets.i.pfBossObject, bossSpawnPoint);
         bossGO.transform.parent = null;
         bossGO.GetComponent<IHandler>().Initialize();
-        _weaponSystem.EquipFirstWeapon();
         _uiController.Initialze();
+        _weaponSystem.EquipFirstWeapon();
     }
 
     public void SetupObjectPools()

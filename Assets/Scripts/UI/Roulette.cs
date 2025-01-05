@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,16 +8,14 @@ public class Roulette : MonoBehaviour
 {
     public static event Action OnSpinWheelActive;
     [SerializeField] private List<GameObject> availableOptions;
-    [SerializeField] private RectTransform _left;
-    [SerializeField] private RectTransform _right;
     [SerializeField] private Transform optionLocation;
     [SerializeField] private Vector3 staticMovementVector;
     [SerializeField] private float staticSpinRate;
 
     private float spinRate;
     private GameObject objectToCenter, objectToPlaceAfter;
-    private int positionIndex=0, positionOffsetX = 120;
-    private float spinTimer, spinDurationMin=20f, spinDurationMax=30f;
+    private int positionMinX = -200, positionIndex=0, positionOffsetX = 130;
+    private float spinTimer, spinDurationMin=2f, spinDurationMax=3f;
     private bool spin=false, spinDown=false, checkingDistance, wheelActive, centerSet;
     private void Start() 
     {
@@ -34,6 +29,7 @@ public class Roulette : MonoBehaviour
     public void SpinTheWheel()
     {
         if(spin) return;
+        OnSpinWheelActive?.Invoke();
         SetupTheWheel();
         spin = true;
         spinTimer = UnityEngine.Random.Range(spinDurationMin, spinDurationMax);
@@ -64,8 +60,6 @@ public class Roulette : MonoBehaviour
             _option.GetComponent<RectTransform>().localPosition = new Vector3(positionIndex, 0);
             positionIndex += positionOffsetX;
         }
-        _right.anchoredPosition = new Vector2(positionIndex - positionOffsetX, 0);
-        
     }
 
     private void ResetRoulette()
@@ -77,7 +71,7 @@ public class Roulette : MonoBehaviour
 
         availableOptions.Clear();
         availableOptions = new List<GameObject>();
-        positionIndex = -120;
+        positionIndex = -positionOffsetX;
     }
     private void Update() 
     {
@@ -85,10 +79,9 @@ public class Roulette : MonoBehaviour
         {
             foreach(GameObject _option in availableOptions)
             {
-                _option.GetComponent<WeaponOption>().Move(1, _left, _right);
-                // _option.GetComponent<RectTransform>().localPosition += staticMovementVector * (spinRate * Time.deltaTime);
-                // if(_option.GetComponent<RectTransform>().localPosition.x <= _left.localPosition.x)
-                //     SetNewPosition(_option);
+                 _option.GetComponent<RectTransform>().localPosition += staticMovementVector * (spinRate * Time.deltaTime);
+                 if(_option.GetComponent<RectTransform>().localPosition.x <= positionMinX)
+                     SetNewPosition(_option);
             }
             if(spinTimer <=0 && spinDown) {spinRate -= .1f;}
             
@@ -109,7 +102,7 @@ public class Roulette : MonoBehaviour
                 }
         }
         _o.GetComponent<RectTransform>().localPosition = new Vector3(
-            objectToPlaceAfter.GetComponent<RectTransform>().localPosition.x + (objectToPlaceAfter.GetComponent<RectTransform>().rect.width /2) + positionOffsetX,0,0);
+            objectToPlaceAfter.GetComponent<RectTransform>().localPosition.x + positionOffsetX,0,0);
     }
 
     private void UpdateTimers()
@@ -126,7 +119,7 @@ public class Roulette : MonoBehaviour
         if(checkingDistance) return;
 
         checkingDistance = true;
-        positionIndex = -120;
+        positionIndex = -positionOffsetX;
         
         foreach(GameObject _option in availableOptions)
         {

@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bossName;
     [SerializeField] private TextMeshProUGUI sugarText;
     [SerializeField] private TextMeshProUGUI notificationText;
+    [SerializeField] private SlotUIManager _slotManager;
 
     private bool isTextReacting;
     private float originalTextSize;
@@ -42,10 +43,12 @@ public class UIController : MonoBehaviour
         PlayerInputController_TopDown.OnPauseGame += OpenPauseMenu;
         PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
 
+        _slotManager.Initialize();
+
         UpdatePlayerHealthUI();
         UpdatePlayerUI();        
         UpdateBossHealthUI();
-        UpdateBossNameUI();
+        //UpdateBossNameUI();
     }
     private void InitializeMainMenu()
     {
