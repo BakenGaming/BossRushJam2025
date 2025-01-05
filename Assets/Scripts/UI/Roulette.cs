@@ -31,7 +31,6 @@ public class Roulette : MonoBehaviour
         if(spin) return;
         OnSpinWheelActive?.Invoke();
         SetupTheWheel();
-        spin = true;
         spinTimer = UnityEngine.Random.Range(spinDurationMin, spinDurationMax);
         spinRate = staticSpinRate;
         objectToCenter = null;
@@ -39,7 +38,6 @@ public class Roulette : MonoBehaviour
         checkingDistance = false;
         wheelActive = true;
         centerSet = false;
-        Debug.Log("Ready To Spin");
     }
 
     private void SetupTheWheel() 
@@ -60,6 +58,7 @@ public class Roulette : MonoBehaviour
             _option.GetComponent<RectTransform>().localPosition = new Vector3(positionIndex, 0);
             positionIndex += positionOffsetX;
         }
+        spin = true;
     }
 
     private void ResetRoulette()
@@ -71,7 +70,7 @@ public class Roulette : MonoBehaviour
 
         availableOptions.Clear();
         availableOptions = new List<GameObject>();
-        positionIndex = -positionOffsetX;
+        positionIndex = 0;  
     }
     private void Update() 
     {
@@ -139,7 +138,6 @@ public class Roulette : MonoBehaviour
             {
                 if(positionIndex == 0) positionIndex += positionOffsetX;
                 _option.GetComponent<RectTransform>().localPosition = new Vector3(positionIndex, 0);
-                Debug.Log($"Placing at {positionIndex}");
                 positionIndex += positionOffsetX;
             }    
         }

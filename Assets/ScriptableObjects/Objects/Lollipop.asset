@@ -18,7 +18,10 @@ MonoBehaviour:
   projectileSprite:
   - {fileID: 1718831515, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   projectileGO: {fileID: 4197752172567564942, guid: 58a00ac281c73804ea929ab8897c1051, type: 3}
-  numberOfProjectilesPerShot: 1
-  projectileSpeed: 7
+  classification: 3
+  dotAmount: 0
+  numberOfProjectilesPerShot: 8
+  projectileSpeed: 15
   projectileDamage: 5
-  lifeTime: 4
+  lifeTime: 6
+  loseSugarOnMiss: 0

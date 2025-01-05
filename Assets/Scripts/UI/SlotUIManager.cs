@@ -24,7 +24,6 @@ public class SlotUIManager : MonoBehaviour
 
     public void AddWeapon(object sender, WeaponSystem.OnEquipNewWeaponEventArgs e)
     {
-        Debug.Log("Add Weapon");
         UISlots[e.slot].GetComponent<Slot>().Activate(e.newWeapon);
     }
 

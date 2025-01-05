@@ -66,11 +66,10 @@ public class AttackHandler_TopDown : MonoBehaviour, IAttackHandler
         IWeaponSlotHandler _handler = weaponPoints[e.slot].GetComponent<IWeaponSlotHandler>();
         if(_handler.IsSlotOccupied())
         {
-            Debug.Log("Occupied");
             _handler.RemoveWeapon();
             _handler.AddWeapon(e.newWeapon);
         }
-        else {Debug.Log("UnOccupied"); _handler.AddWeapon(e.newWeapon);}
+        else _handler.AddWeapon(e.newWeapon);
 
     }
     public Vector3 GetShootDirection() { return _inputHandler.GetShootDirection();}

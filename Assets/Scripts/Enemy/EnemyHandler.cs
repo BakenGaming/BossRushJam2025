@@ -13,7 +13,6 @@ public class EnemyHandler : MonoBehaviour, IHandler
 
     private StatSystem _statSystem;
     private HealthSystem _healthSystem;
-
     #endregion
     #region Initialize
 
@@ -49,11 +48,11 @@ public class EnemyHandler : MonoBehaviour, IHandler
         onDamageReceived?.Invoke();
     }
 
-    public void TakeDamage(int _damage)
+    public void TakeDamage(int _damage, bool _isDot, int _dotAmount)
     {
-        GetComponent<IDamageable>().TakeDamage(_damage);
-        
+        GetComponent<IDamageable>().TakeDamage(_damage, _isDot, _dotAmount);
     }
+    
     #endregion
 
     #region Enemy Setup

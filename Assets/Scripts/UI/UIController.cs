@@ -15,6 +15,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private TextMeshProUGUI bossName;
     [SerializeField] private TextMeshProUGUI sugarText;
+    [SerializeField] private GameObject sugarBar;
     [SerializeField] private TextMeshProUGUI notificationText;
     [SerializeField] private SlotUIManager _slotManager;
 
@@ -48,6 +49,7 @@ public class UIController : MonoBehaviour
         UpdatePlayerHealthUI();
         UpdatePlayerUI();        
         UpdateBossHealthUI();
+        UpdateSugarBarUI();
         //UpdateBossNameUI();
     }
     private void InitializeMainMenu()
@@ -125,11 +127,18 @@ public class UIController : MonoBehaviour
     private void SugarLoss(bool _isMiss, int _amount)
     {
         sugarText.text = SugarManager.i.GetCurrentSugarCount().ToString();
+        UpdateSugarBarUI();
     }
 
     private void SugarGain()
     {
         sugarText.text = SugarManager.i.GetCurrentSugarCount().ToString();
+        UpdateSugarBarUI();
+    }
+
+    private void UpdateSugarBarUI()
+    {
+        sugarBar.GetComponent<Slider>().value = SugarManager.i.GetCurrentNeededSugarPercent();
     }
 
     private void UpdateBossHealthUI()

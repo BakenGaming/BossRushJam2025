@@ -49,9 +49,9 @@ public class PlayerHandler : MonoBehaviour, IHandler
         onDamageReceived?.Invoke();
     }
 
-    public void TakeDamage(int _damage)
+    public void TakeDamage(int _damage, bool _isDot, int _dotAmount)
     {
-        GetComponent<IDamageable>().TakeDamage(_damage);
+        GetComponent<IDamageable>().TakeDamage(_damage, _isDot, _dotAmount);
         
     }
     #endregion
@@ -73,7 +73,10 @@ public class PlayerHandler : MonoBehaviour, IHandler
     private void Update() {
 #if UNITY_EDITOR
     if (Input.GetKeyDown(KeyCode.F))
-            TakeDamage(5);
+            TakeDamage(5, false, 0);
+    
+    if (Input.GetKeyDown(KeyCode.G))
+        TakeDamage(5, true, 2);
             
 #endif        
     }
