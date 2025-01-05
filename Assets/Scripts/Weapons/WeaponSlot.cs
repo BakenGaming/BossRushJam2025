@@ -28,6 +28,5 @@ public class WeaponSlot : MonoBehaviour, IWeaponSlotHandler
         slotOccupied = false;
         thisSlotTransform = transform.Find("Slot");    
     }
-
     public GameObject GetEquippedWeapon(){return equippedWeapon;}
 }

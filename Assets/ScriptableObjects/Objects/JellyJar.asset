@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Jelly Jar
   projectileName: Jelly
-  weaponSprite: {fileID: 255493450, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 0e2aa105dda7a664d8d19fc776a252d4, type: 3}
   projectileSprite:
   - {fileID: -813076857, guid: 7d73b750c57d7af4aa5f6af7914c7b32, type: 3}
   projectileGO: {fileID: 550037795871713074, guid: 86494e1122c5fb145828169a4023af0d, type: 3}
