@@ -10,4 +10,5 @@ public interface IHandler
     public void TakeDamage(int _damage, bool _isdot, int _dotAmount);
     public HealthSystem GetHealthSystem();
     public StatSystem GetStatSystem();
+    public BossBrain[] GetBrains();
 }

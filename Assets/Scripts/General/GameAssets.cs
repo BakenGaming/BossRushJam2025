@@ -36,6 +36,9 @@ public class GameAssets : MonoBehaviour
     [Header("Boss Specific")]
     public GameObject pfBossObject;
     public GameObject pfLootObject;
+    public GameObject pfBerryBomb;
+    public GameObject pfBerry;
+    public GameObject pfBerrySplash;
 
     [Header("UI")]
     public GameObject pfWeaponOptionRoulette;

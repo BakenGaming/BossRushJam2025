@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
                 20, _weapon.GetComponent<Weapon>().GetWeaponStats().projectileName);
 
         ObjectPooler.SetupPool(GameAssets.i.pfLootObject.GetComponent<LootObject>(), 20, "Sugar Cube");
+        ObjectPooler.SetupPool(GameAssets.i.pfBerryBomb.GetComponent<Projectile>(), 3, "Berry Bomb");
+        ObjectPooler.SetupPool(GameAssets.i.pfBerry.GetComponent<Projectile>(), 3, "Berry");
     }
     #endregion
 

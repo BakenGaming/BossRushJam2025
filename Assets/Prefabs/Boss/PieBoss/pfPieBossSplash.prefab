@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 5770500479552033760}
   - component: {fileID: 1320476676462594567}
   - component: {fileID: 8476546095798895620}
-  m_Layer: 0
+  - component: {fileID: -707608853165432621}
+  m_Layer: 16
   m_Name: pfPieBossSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +98,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 924b612772b40f147845397ccec72064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleSprites:
+  - {fileID: 1734943153, guid: 677ba06dedee8f0458f691688b0756d4, type: 3}
+  - {fileID: -1111928807, guid: 677ba06dedee8f0458f691688b0756d4, type: 3}
+  - {fileID: 387511700, guid: 677ba06dedee8f0458f691688b0756d4, type: 3}
+  - {fileID: 2103324676, guid: 677ba06dedee8f0458f691688b0756d4, type: 3}
+--- !u!58 &-707608853165432621
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354336921286297655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.53125

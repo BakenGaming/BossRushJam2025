@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6299464788738775590}
   - component: {fileID: 5841659073111855501}
   - component: {fileID: 6595371433151393924}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: pfPieBoss_BerryBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1747744947
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1986543403, guid: 677ba06dedee8f0458f691688b0756d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,7 +116,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6a32a0ed878504e9471b38a6164986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!50 &6595371433151393924
 Rigidbody2D:
   serializedVersion: 4

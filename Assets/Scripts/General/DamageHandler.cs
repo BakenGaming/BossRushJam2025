@@ -6,7 +6,7 @@ public class DamageHandler : MonoBehaviour, IDamageable
 {
     #region Variables
     [SerializeField] private bool isTesting;
-    private IHandler handler;
+    private IHandler _handler;
     private bool isEnemy;
     private bool isDotActive;
     private float dotTimer, dotTime = 3f, dotIntervalTimer, dotInterval = .5f;
@@ -16,8 +16,8 @@ public class DamageHandler : MonoBehaviour, IDamageable
     public void InitializeDamage(bool _isEnemy)
     {
         isEnemy = _isEnemy;
-        if (isEnemy) handler = GetComponentInParent<EnemyHandler>(); 
-        else handler = GetComponentInParent<PlayerHandler>();
+        if (isEnemy) _handler = GetComponentInParent<EnemyHandler>(); 
+        else _handler = GetComponentInParent<PlayerHandler>();
     }
     #endregion
     #region Handle Damage
@@ -36,10 +36,10 @@ public class DamageHandler : MonoBehaviour, IDamageable
 
     private void DamageEntity(int _damage)
     {
-        handler.GetHealthSystem().LoseHealth(_damage);
-        handler.UpdateHealth();
+        _handler.GetHealthSystem().LoseHealth(_damage);
+        _handler.UpdateHealth();
         
-        if(handler.GetHealthSystem().GetCurrentHealth() <= 0) HandleDeath();
+        if(_handler.GetHealthSystem().GetCurrentHealth() <= 0) HandleDeath();
 
         DamagePopup.Create(transform.position, _damage);
         if(!isEnemy) Instantiate(GameAssets.i.pfPlayerDamageParticles, transform.position, Quaternion.identity);
@@ -49,12 +49,12 @@ public class DamageHandler : MonoBehaviour, IDamageable
     {
         if(isTesting)
         {
-            handler.GetHealthSystem().RestoreHealth(0,true);
-            handler.UpdateHealth();
+            _handler.GetHealthSystem().RestoreHealth(0,true);
+            _handler.UpdateHealth();
         }
         else
         {
-            handler.HandleDeath();
+            _handler.HandleDeath();
             if(isEnemy) Destroy(gameObject);
         }
     }

@@ -8,4 +8,5 @@ public class EnemyStatsSO : ScriptableObject
     public string enemyName;
     public int health;
     public float moveSpeed;
+    public EnemyProjectile[] possibleProjectiles;
 }

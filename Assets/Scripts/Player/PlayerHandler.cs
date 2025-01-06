@@ -81,4 +81,11 @@ public class PlayerHandler : MonoBehaviour, IHandler
 #endif        
     }
     #endregion
+
+    #region Unused From IHandler
+    public BossBrain[] GetBrains()
+    {
+        throw new NotImplementedException();
+    }
+    #endregion
 }

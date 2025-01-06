@@ -51,6 +51,9 @@ MonoBehaviour:
   pfPlayerDamageParticles: {fileID: 1065274637865538497, guid: 96c85c02d3bc15a4293d25c9c0f5068f, type: 3}
   pfBossObject: {fileID: 4937358494166531982, guid: 81701a6c4b81ddd4ea70003e40c64959, type: 3}
   pfLootObject: {fileID: 6163139253411149444, guid: 4b302c7484bcce8418ffb5c1c0799478, type: 3}
+  pfBerryBomb: {fileID: 2490112509928836231, guid: 9f2e6d739f7dd6a41a6a4b72cf4a87ef, type: 3}
+  pfBerry: {fileID: 8544384924316785507, guid: 6e14b1ec1fd5ab342a7d1f2c343cf5b8, type: 3}
+  pfBerrySplash: {fileID: 3354336921286297655, guid: 558100c70eb8b034aa898355473f7163, type: 3}
   pfWeaponOptionRoulette: {fileID: 1166893729298738754, guid: 34d0a020476fb524a968de4972a1b96d, type: 3}
   audioClipArray: []
   musicTrackArray: []
