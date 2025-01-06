@@ -18,10 +18,10 @@ public class Splash : MonoBehaviour
     public void Initialize()
     {
         _sr = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<CircleCollider2D>();
         _sr.sprite = possibleSprites[Random.Range(0, possibleSprites.Length)];
-        spriteColor = _sr.color;
         tickTimer = 0;  
+        _collider = GetComponent<CircleCollider2D>();
+        spriteColor = _sr.color;
         _isInSplash = false;  
     }
 

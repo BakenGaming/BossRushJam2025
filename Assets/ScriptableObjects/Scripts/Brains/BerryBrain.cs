@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Brains/Berry Bomb Brain")]
-public class BerryBombBrain : BossBrain
+[CreateAssetMenu(menuName = "Brains/Berry Brain")]
+public class BerryBrain : BossBrain
 {
     private Vector3 playerLastPosition;
     public override void InitializeAI(IHandler _handler)
@@ -18,8 +17,7 @@ public class BerryBombBrain : BossBrain
         
         if(attack)
         {
-            attack.BombPlayer();
+            attack.ShootPlayer();
         }
     }
-
 }

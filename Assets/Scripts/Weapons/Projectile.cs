@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 using System;
+using UnityEngine.InputSystem.Processors;
 
 public class Projectile : MonoBehaviour
 {
     public static event Action<int> OnProjectileMiss;
     [SerializeField] private Transform target;
-    private Vector3 shootDir;
+    private Vector3 shootDir, bombSizeTriggerDistance;
+    private Vector2 scaleVectorUp = new Vector2(3f, 3f);
+    private Vector2 scaleVectorDown = new Vector2(.25f,.25f);
     private WeaponStatsSO _weaponStatsSO;
     private EnemyStatsSO _enemyStatsSO;
     private SpriteRenderer _renderer;
-    private float lifeTimer;
+    private float lifeTimer, projectileSpeed;
     private Classification _classification;
     private Transform _target;
     private bool _isEnemyProjectile, _projectileHasLifetime;
@@ -32,31 +35,38 @@ public class Projectile : MonoBehaviour
         _isEnemyProjectile = false;
     }
 
-    public void Initialize(EnemyStatsSO _enemyStats, Vector2 _target, string _n)
+    public void InitializeNormalShot(EnemyStatsSO _enemyStats, Vector3 _shootDir, string _n)
     {
-
+        _enemyStatsSO = _enemyStats;
         _renderer = GetComponent<SpriteRenderer>();
         _name = _n;
+        shootDir = (_shootDir - transform.position).normalized;
+        transform.eulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(shootDir) - 90f);
+        lifeTimer = _enemyStatsSO.possibleProjectiles[1].lifeTime;
+        projectileSpeed = _enemyStatsSO.possibleProjectiles[1].projectileSpeed;
+        _projectileHasLifetime = true;
+        _isEnemyProjectile = true;
+    }
 
-        if(target != null)
-        {
-            target.GetComponent<SpriteRenderer>().enabled = true;
-            target.SetParent(null);
-            target.position = _target;
-            shootDir = (target.position - transform.position).normalized;
-        }
-        else shootDir = _target;
- 
+    public void InitializeBomb(EnemyStatsSO _enemyStats, Vector3 _target, string _n)
+    {
+        _renderer = GetComponent<SpriteRenderer>();
+        _name = _n;
         _enemyStatsSO = _enemyStats;
 
+        target.GetComponent<SpriteRenderer>().enabled = true;
+        target.SetParent(null);
+        target.position = _target;
+        shootDir = (target.position - transform.position).normalized;
+        bombSizeTriggerDistance = (target.position + transform.position) / 2f;
+        lifeTimer = _enemyStatsSO.possibleProjectiles[0].lifeTime;
+        projectileSpeed = _enemyStatsSO.possibleProjectiles[0].projectileSpeed;
+ 
         transform.eulerAngles = new Vector3(0, 0, UtilsClass.GetAngleFromVectorFloat(shootDir) - 90f);
 
-        lifeTimer = _enemyStatsSO.possibleProjectiles[0].lifeTime;
-
-        if(lifeTimer == 0) _projectileHasLifetime = false;
-        else _projectileHasLifetime = true;
-        
+        _projectileHasLifetime = false;
         _isEnemyProjectile = true;
+        TriggerGrow();
     }
 
     void Update()
@@ -70,22 +80,26 @@ public class Projectile : MonoBehaviour
     {
         if(GameManager.i.GetIsPaused()) return;
 
-        transform.position += shootDir * _enemyStatsSO.possibleProjectiles[0].projectileSpeed * Time.deltaTime;
-        if(target != null)
+        transform.position += shootDir * projectileSpeed * Time.deltaTime;
+        if(!_projectileHasLifetime)
         {
+            Vector2 newDistance = (target.position + transform.position) /2;
+            if(Vector2.Distance(bombSizeTriggerDistance, newDistance) <= .5f)
+            {
+                TriggerShrink();
+            }
             if(Vector2.Distance(target.position, transform.position) <= .5f)
             {
-                target.GetComponent<SpriteRenderer>().enabled = false;
                 Explode();
             }
         }
-        UpdateLifeTimer();
+        else UpdateLifeTimer();
     }
 
     private void Explode()
     {
-        
-        GameObject newSplash = Instantiate(GameAssets.i.pfBerrySplash, transform.position, Quaternion.Euler( 0, UnityEngine.Random.Range( 0, 4 ) * 90, 0 ));
+        target.GetComponent<SpriteRenderer>().enabled = false;
+        GameObject newSplash = Instantiate(GameAssets.i.pfBerrySplash, transform.position, Quaternion.Euler( 0, 0, UnityEngine.Random.Range( 0, 4 ) * 90 ));
         newSplash.transform.SetParent(null);
         newSplash.GetComponent<Splash>().Initialize();        
         ObjectPooler.EnqueueObject(this, _name);
@@ -113,6 +127,16 @@ public class Projectile : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, angle - 90f);
         
         transform.position += moveDir * _weaponStatsSO.projectileSpeed * Time.deltaTime;
+    }
+
+    private void TriggerGrow()
+    {
+        transform.localScale = Vector2.Lerp(transform.localScale, scaleVectorUp, 300  * Time.deltaTime);
+    }
+
+    private void TriggerShrink()
+    {
+        transform.localScale = Vector2.Lerp(transform.localScale, scaleVectorDown, 3  * Time.deltaTime);
     }
 
     private void UpdateLifeTimer()
@@ -159,7 +183,8 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            Explode();
+            if(!_projectileHasLifetime) Explode();
+            else ObjectPooler.EnqueueObject(this, _name);
         }
     }
 }
