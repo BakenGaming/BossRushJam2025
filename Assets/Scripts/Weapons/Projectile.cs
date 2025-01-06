@@ -74,7 +74,7 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            if(_weaponStatsSO.loseSugarOnMiss)
+            if(_weaponStatsSO.loseSugarOnMiss && _trigger.tag != "Enemy Projectile")
             {
                 OnProjectileMiss?.Invoke(1);
                 TextPopUp.Create(transform.position, "-1", true);
