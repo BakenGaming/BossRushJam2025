@@ -886,7 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1381921791}
 --- !u!114 &401558664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,7 +1128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 902080730}
 --- !u!114 &463444902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1489,7 +1487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 731252149}
 --- !u!114 &497689808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,7 +1579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1511090503}
 --- !u!114 &502520813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4327,7 +4323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1574010018}
 --- !u!114 &1304861204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5218,7 +5213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1780746811}
 --- !u!114 &1773811641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5679,7 +5673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 569703754}
 --- !u!114 &1810484824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6464,7 +6457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f7468f3f252846ba3506290b251a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicator: {fileID: 1408416722}
 --- !u!114 &2043278893
 MonoBehaviour:
   m_ObjectHideFlags: 0

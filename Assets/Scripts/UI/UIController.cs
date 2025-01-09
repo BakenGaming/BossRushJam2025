@@ -7,7 +7,6 @@ using System;
 
 public class UIController : MonoBehaviour
 {
-    public static event Action OnSlotManagerInitialized;
     [SerializeField] private bool isMainMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
@@ -35,7 +34,7 @@ public class UIController : MonoBehaviour
         LootObject.OnSugarCollected -= SugarGain;
         SugarManager.OnSugarDecrease -= SugarLoss;
         PlayerInputController_TopDown.OnPauseGame -= OpenPauseMenu;
-        PlayerInputController_TopDown.OnUnpauseGame -= ClosePauseMenu;
+        //PlayerInputController_TopDown.OnUnpauseGame -= ClosePauseMenu;
     }
     public void Initialze()
     {
@@ -44,11 +43,9 @@ public class UIController : MonoBehaviour
         LootObject.OnSugarCollected += SugarGain;
         SugarManager.OnSugarDecrease += SugarLoss;
         PlayerInputController_TopDown.OnPauseGame += OpenPauseMenu;
-        PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
+        //PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
 
         _slotManager.Initialize();
-        OnSlotManagerInitialized?.Invoke();
-
 
         UpdatePlayerHealthUI();
         UpdatePlayerUI();        
@@ -67,12 +64,14 @@ public class UIController : MonoBehaviour
     #region Menus
     private void OpenPauseMenu()
     {
+        Debug.Log("Pause Menu");
         pauseMenu.SetActive(true);
         GameManager.i.PauseGame();
     }
 
     public void ClosePauseMenu()
     {
+        Debug.Log("Close Pause");
         pauseMenu.SetActive(false);
         GameManager.i.UnPauseGame();
     }

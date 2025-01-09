@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     #region Initialize
     private void OnDisable() 
     {
-          
+
     }
     private void Awake() 
     {
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public void PauseGame(){if(isPaused) return; else isPaused = true;}
-    public void UnPauseGame(){if(isPaused) isPaused = false; else return;}
+    public void UnPauseGame(){Debug.Log("GM UnPause"); if(isPaused) isPaused = false; else return;}
     
     public Transform GetSysMessagePoint(){ return sysMessagePoint;}
     public Transform GetTextPopUpLocation(){return textPopupLocation;}

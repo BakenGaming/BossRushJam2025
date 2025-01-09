@@ -72,8 +72,9 @@ public class PlayerInputController_TopDown : MonoBehaviour, IInputHandler
     }
     private void HandlePauseInput(InputAction.CallbackContext context)
     {
+        Debug.Log("Pause Game");
         if(!GameManager.i.GetIsPaused()) OnPauseGame?.Invoke();
-        else OnUnpauseGame?.Invoke();
+        //else OnUnpauseGame?.Invoke();
 
     }
 
