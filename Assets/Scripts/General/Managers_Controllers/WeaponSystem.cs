@@ -33,6 +33,7 @@ public class WeaponSystem : MonoBehaviour
 
     public void EquipFirstWeapon()
     {
+        Debug.Log("Equip");
         SelectNewSlot();
         AddNewWeapon(gameWeapons[UnityEngine.Random.Range(0, gameWeapons.Length)]);
     }
@@ -46,6 +47,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void SelectNewSlot()
     {
+        Debug.Log("Select Slot");
         _newSlot = UnityEngine.Random.Range(0,8);
         OnNewSlotSelected?.Invoke(_newSlot);
     }

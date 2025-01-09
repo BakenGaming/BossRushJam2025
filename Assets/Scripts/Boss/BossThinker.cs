@@ -14,6 +14,7 @@ public class BossThinker : MonoBehaviour
     }
     private void LateUpdate() 
     {
+        if(GameManager.i.GetIsPaused()) return;
         foreach (BossBrain _brain in brain)
             _brain.Think(this);    
     }

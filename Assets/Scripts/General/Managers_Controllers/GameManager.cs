@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     #region Variables
     private static GameManager _i;
     public static GameManager i { get { return _i; } }
+    [SerializeField] private Texture2D cursorTexture;
     [SerializeField] private Transform sysMessagePoint, textPopupLocation;
     [SerializeField] private Transform playerSpawnPoint, bossSpawnPoint;
     [SerializeField] private Transform pooledObjectLocation;
     [SerializeField] private UIController _uiController;
     [SerializeField] private SugarManager _sugarManager;
+    [SerializeField] private GameObject currentBoss;
     private WeaponSystem _weaponSystem;
     private BonusStatController _bonusStatController;
     private GameObject playerGO, bossGO;
@@ -22,9 +24,14 @@ public class GameManager : MonoBehaviour
     #endregion
     
     #region Initialize
+    private void OnDisable() 
+    {
+          
+    }
     private void Awake() 
     {
         _i = this;  
+        Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2f, cursorTexture.height / 2f), CursorMode.Auto);
         Initialize();
     }
 
@@ -51,10 +58,14 @@ public class GameManager : MonoBehaviour
 
     private void SpawnBoss()
     {
-        bossGO = Instantiate(GameAssets.i.pfBossObject, bossSpawnPoint);
+        bossGO = Instantiate(currentBoss, bossSpawnPoint);
         bossGO.transform.parent = null;
         bossGO.GetComponent<IHandler>().Initialize();
         _uiController.Initialze();
+    }
+
+    public void ReadyForWeapon()
+    {
         _weaponSystem.EquipFirstWeapon();
     }
 

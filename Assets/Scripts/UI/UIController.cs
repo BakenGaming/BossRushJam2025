@@ -7,10 +7,12 @@ using System;
 
 public class UIController : MonoBehaviour
 {
+    public static event Action OnSlotManagerInitialized;
     [SerializeField] private bool isMainMenu;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditsScreen;
+    [SerializeField] private GameObject tutorialOptionsMenu;
     [SerializeField] private GameObject healthBar;
     [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private TextMeshProUGUI bossName;
@@ -45,6 +47,8 @@ public class UIController : MonoBehaviour
         PlayerInputController_TopDown.OnUnpauseGame += ClosePauseMenu;
 
         _slotManager.Initialize();
+        OnSlotManagerInitialized?.Invoke();
+
 
         UpdatePlayerHealthUI();
         UpdatePlayerUI();        
@@ -94,9 +98,32 @@ public class UIController : MonoBehaviour
         creditsScreen.SetActive(false);
     }
 
+    public void OpenTutorialOptionMenu()
+    {
+        tutorialOptionsMenu.SetActive(true);
+    }
+
+    public void PlayTutorial()
+    {
+        CloseTutorialOptionMenu();
+        SceneController.PlayTutorial();
+    }
+
+    public void SkipTutorial()
+    {
+        ObjectPooler.EmptyPoolForSceneChange();
+        CloseTutorialOptionMenu();
+        SceneController.StartGame();
+    }
+
+    public void CloseTutorialOptionMenu()
+    {
+        tutorialOptionsMenu.SetActive(false);
+    }
+
     public void StartGame()
     {
-        SceneController.StartGame();
+        OpenTutorialOptionMenu();
     }
 
     public void RestartGame()

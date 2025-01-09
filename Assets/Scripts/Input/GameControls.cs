@@ -233,7 +233,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5e87161d-a0e0-4656-90d7-2338ee0527f5"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -484,7 +484,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8282289a-b69f-49e9-9086-6d393d1286c4"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -576,7 +576,7 @@ public partial class @GameControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""88847c84-7faa-4425-bd82-a01b68c6f16f"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

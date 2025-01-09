@@ -187,6 +187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStatsSO: {fileID: 11400000, guid: 6236253640693d94bbe4e0ce1ff5eaed, type: 2}
+  _availableBrains: []
+  isTrainingDummy: 1
 --- !u!114 &5314412656207579260
 MonoBehaviour:
   m_ObjectHideFlags: 0

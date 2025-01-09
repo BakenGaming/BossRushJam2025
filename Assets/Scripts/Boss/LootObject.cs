@@ -41,6 +41,11 @@ public class LootObject : MonoBehaviour, ICollectable
 
     private void FixedUpdate()
     {
+        if(GameManager.i.GetIsPaused()) 
+        {
+            _rb.velocity = Vector3.zero;
+            return;
+        }
         if (playerFound)
         {
             if(_delayTimer <= 0)

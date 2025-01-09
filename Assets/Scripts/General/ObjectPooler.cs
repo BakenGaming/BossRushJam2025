@@ -47,4 +47,10 @@ public class ObjectPooler
             poolDictionary[dictionaryEntry].Enqueue((T)pooledInstance);
         }
     }
+
+    public static void EmptyPoolForSceneChange()
+    {
+        poolDictionary.Clear();
+        poolLookup.Clear();
+    }
 }

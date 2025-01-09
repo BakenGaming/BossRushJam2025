@@ -15,7 +15,7 @@ public class BossMovement : MonoBehaviour
         
         if(_isWaiting) return;
 
-        if(_isMoving) Move();
+        if(_isMoving && !GameManager.i.GetIsPaused()) Move();
         else
         {
             movePoint.position = new Vector2(UnityEngine.Random.Range(xMin,xMax), UnityEngine.Random.Range(yMin,yMax));

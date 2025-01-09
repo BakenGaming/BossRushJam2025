@@ -11,6 +11,7 @@ public class EnemyHandler : MonoBehaviour, IHandler
     #region Variables
     [SerializeField] private EnemyStatsSO enemyStatsSO;
     [SerializeField] private BossBrain[] _availableBrains;
+    [SerializeField] private bool isTrainingDummy;
 
     private StatSystem _statSystem;
     private HealthSystem _healthSystem;
@@ -66,13 +67,18 @@ public class EnemyHandler : MonoBehaviour, IHandler
     //  GetComponent<IAttackHandler>().Initialize();
         GetComponent<IDamageable>().InitializeDamage(true);
         GetComponent<LootBag>().Initialize();
-        GetComponent<BossMovement>().Initialize();
-        GetComponent<BossAttackHandler>().Initialize();
-        GetComponent<BossThinker>().ActivateBrain(this);
+
+        if(!isTrainingDummy)
+        {
+            GetComponent<BossMovement>().Initialize();
+            GetComponent<BossAttackHandler>().Initialize();
+            GetComponent<BossThinker>().ActivateBrain(this);
+        }
     }
     #endregion
     #region Get Functions
     public EnemyStatsSO GetEnemyStatsSO(){return enemyStatsSO;}
     public BossBrain[] GetBrains(){return _availableBrains;}
+    public bool GetIsTrainingDummy(){return isTrainingDummy;}
     #endregion
 }

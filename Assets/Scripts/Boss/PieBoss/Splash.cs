@@ -27,6 +27,7 @@ public class Splash : MonoBehaviour
 
     private void Update() 
     {
+        if(GameManager.i.GetIsPaused()) return;
         Decay();
 
         if(_isInSplash)
